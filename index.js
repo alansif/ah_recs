@@ -25,10 +25,11 @@ fs.readJson(filename, (err, obj)=>{
         return;
     }
     console.log(obj);
+    endpoints = obj;
 });
 
 function writedb() {
-    fs.writeJson(filename, endpoints, err=>{
+    fs.writeJson(filename, endpoints, {spaces: 4}, err=>{
         if (err) console.error(err);
     })
 }
@@ -39,6 +40,7 @@ app.get('/endpoints', function(req, res){
 
 app.post('/endpoints', function(req, res){
     let eps = req.body.endpoints || [];
+    endpoints = [];
     eps.forEach(x=>{
         endpoints.push({
             ip: x.ip,
