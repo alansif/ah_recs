@@ -1,3 +1,5 @@
+const tsdb = require('./config').tsdb;
+
 const fs = require('fs-extra');
 
 const express = require('express');
@@ -33,6 +35,10 @@ function writedb() {
         if (err) console.error(err);
     })
 }
+
+app.get('/tsdb', function(req, res){
+    res.status(200).json({tsdb});
+});
 
 app.get('/endpoints', function(req, res){
     res.status(200).json(endpoints);
