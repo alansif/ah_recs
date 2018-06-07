@@ -1,5 +1,5 @@
 const tsdb = {
-    host: '10.0.0.29',
+    host: '192.168.100.61',
     database: 'udp'
 };
 

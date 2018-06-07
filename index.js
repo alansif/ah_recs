@@ -129,6 +129,7 @@ app.post('/upload', function(req, res){
 app.use(function(req, res){
 //    console.log(req.headers);
 //    console.log(req.body);
+	console.log(req.url);
     res.sendStatus(404);
 });
 
