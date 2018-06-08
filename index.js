@@ -51,7 +51,8 @@ app.post('/endpoints', function(req, res){
         endpoints.push({
             ip: x.ip,
             label: x.label,
-            enabled: x.enabled
+            enabled: x.enabled,
+            group: x.group
         });
     });
     writedb();
